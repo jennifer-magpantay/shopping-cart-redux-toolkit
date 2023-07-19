@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
 
-import { List } from "./List";
+import { ProductList } from "./ProductList";
 export const Cart = () => {
   const { cartProducts } = useSelector((state) => state.cart);
+  const { totalCartProducts } = useSelector((state) => state.cart);
 
   return (
     <div>
-      Cart
-      <List data={cartProducts} type="cart" />
+      Cart <span>{totalCartProducts}</span>
+      <ProductList data={cartProducts} type="cart" />
     </div>
   );
 };
